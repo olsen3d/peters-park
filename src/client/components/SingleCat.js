@@ -10,11 +10,26 @@ import CatCard from './CatCard'
 // this is not the correct import you want generally
 // you want the default export
 // don't worry about it too much
+
 export class DisconnectedSingleCat extends React.Component {
   render() {
     return (
-      <div className='single-cat'>
-
+      <div className="single-cat">
+        <h2>{this.props.name}</h2>
+        <img src={this.props.imageUrl} />
+        <ul className="toys">
+          {
+            this.props.toyRatings.map( toy => <li key={toy.name}>{toy.name}</li>)
+          }
+        </ul>
+        <div className="friends">
+          <h3>Friends</h3>
+            {this.props.friends.map( friend => {
+              return (
+                <CatCard key={friend.id} />
+              )
+            })}
+        </div>
       </div >
     )
   }

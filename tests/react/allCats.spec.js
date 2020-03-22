@@ -37,7 +37,7 @@ describe('React - AllCats', () => {
 
   it('passes some props to the CatCard components', () => {
     const firstCatCard = catsWrapper.find(CatCard).get(0)
-
+    
     expect(+firstCatCard.key).to.equal(cats[0].id)
     expect(firstCatCard.props.id).to.equal(cats[0].id)
     expect(firstCatCard.props.name).to.equal(cats[0].name)

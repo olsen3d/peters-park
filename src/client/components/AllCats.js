@@ -17,17 +17,13 @@ export class DisconnectedAllCats extends React.Component {
     return (
       <div className='all-cats'>
         <h1>Peter's Park</h1>
-        <ul>
           {
             cats.map( cat => {
               return (
-                <li key={cat.id}>
-                  <CatCard />
-                </li>
+                  <CatCard key={cat.id}  id={cat.id} name={cat.name} />
               )
             })
           }
-        </ul>
       </div>
     )
   }
